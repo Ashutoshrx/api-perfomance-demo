@@ -73,3 +73,7 @@ server.compression.min-response-size= 1024
 | Time Taken                 | 3.19s                                                                        | 2.17s                  |
 | Response Size  (Around 2.9L rows)          | 29.9MB                                                                    | 1.46MB                 |
 | WebClient Integration call | Throws DataBufferLimitException: <br/> Exceeded limit on max bytes to buffer | No Exception           |
+
+* **We have successfully scaled the system by decreasing the download time and the network bandwidth.** </br>
+* **We also overcome the DataBufferLimitException that was throwing while fetching huge data using webclient 
+  integration call.**
