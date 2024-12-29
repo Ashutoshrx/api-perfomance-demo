@@ -71,5 +71,5 @@ server.compression.min-response-size= 1024
 | Feature                    | Before GZIP Compression                                                      | After GZIP Compression |
 |----------------------------|------------------------------------------------------------------------------|------------------------|
 | Time Taken                 | 3.19s                                                                        | 2.17s                  |
-| Response Size              | 29.9MB                                                                       | 1.46MB                 |
+| Response Size  (Around 2.9L rows)          | 29.9MB                                                                    | 1.46MB                 |
 | WebClient Integration call | Throws DataBufferLimitException: <br/> Exceeded limit on max bytes to buffer | No Exception           |
