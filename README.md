@@ -49,13 +49,18 @@ CREATE INDEX idx_category_id ON category (id);
 * Time Taken after indexing: 3.19s
 * Total Response size --> 29.9 MB  
 ## Hardly made any sense right? Let's improve further.
+### Use of Multi-threading(CompletableFuture<T>)
+| Method        | Time Taken | Response Size | Threads Used | Curl path |
+|----------------|------------|--------------|--------------|-----------|
+| Sync          | 12.91s     | 376B         | 1            |   ```curl --location 'http://localhost:8080/api-performer-demo/v1/products/1/sync'```        |
+| Async         | 03.85s     | 376B         | 4            |    ```curl --location 'http://localhost:8080/api-performer-demo/v1/products/1/async'```    |
 
 ## Problems faced while fetching huge response data through network:
 * Fetching 29.9 MB of response payload via network was difficult.
 * Even while integration call using webclient was throwing exception
 * - Max-in-memory size for webclient call was set to 16MB
 
-# Secret Recipe to fix: 
+# Secret Recipe to fix Memory: 
 ## Use of GZIP compression
 Add below properties to your configuration file and you are done.
 ```
